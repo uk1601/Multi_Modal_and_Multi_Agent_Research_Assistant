@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    #image: udaykirandasari/assignment2_backend:latest
+    container_name: backend-container4
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    volumes:
+      - ./secrets:/backend/secrets:ro
+      - ./.env:/backend/.env
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    #image: udaykirandasari/assignment2_frontend:latest
+    container_name: frontend-container4
+    ports:
+      - "8501:8501"
+      - "9090:9090"
+    env_file:
+      - ./.env
+    depends_on:
+      - backend
+    volumes:
+      - ./secrets:/app/secrets:ro
+      - ./.env:/app/.env
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

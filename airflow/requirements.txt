@@ -1,0 +1,12 @@
+selenium
+requests
+bs4
+jupyter
+ipywidgets
+openai
+pinecone-client
+docling
+python-dotenv
+tqdm
+pathlib
+pandas

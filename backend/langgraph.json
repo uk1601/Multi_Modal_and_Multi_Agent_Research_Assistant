@@ -1,0 +1,11 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {
+    "agent": "/Users/akashvarun/Northeastern/testin123/Assignment4_team1/backend/agents/multi_modal_rag.py"
+  },
+  "env": ".env",
+  "python_version": "3.11",
+  "dependencies": [
+    "."
+  ]
+}
